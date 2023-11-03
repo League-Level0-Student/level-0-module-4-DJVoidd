@@ -11,9 +11,9 @@ import processing.core.PImage;
  *    top level of this module. It can be anything as long as it has large eyes!
  * 
  * 2. Declare a variable for the image:
- *    PImage face;
+    PImage face;
 
- * 3. In your setup() method, import your image using the following code:
+ 3. In your setup() method, import your image using the following code:
  *    face = loadImage("face.jpg");
  * 
  * 4. Resize your face image to the size of the window using the resize() method.
@@ -36,6 +36,7 @@ import processing.core.PImage;
  *    within. When mouseX and mouseY goes outside of these bounds, set it back
  *    to the boundary. Put this code before you draw the pupils.
  */
+
 public class GooglyEyes extends PApplet {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
@@ -51,12 +52,25 @@ public class GooglyEyes extends PApplet {
     public void setup() {
 face = loadImage("cat.jpg");
 face.resize(WIDTH, HEIGHT);
+background(face);
 
     }
 
     @Override
     public void draw() {
-ellipse(400,300,69,69);
+fill(255,255,255);
+ellipse(220,280,220,150);
+ellipse(557,267,220,150);
+fill(0,0,0);
+int x = mouseX;
+int y = mouseY;
+if (x <350) x=350;
+if (x > 460) x = 460;
+if (y > 315) y = 315;
+if (y < 215) y = 230;
+ellipse(x + 150,y,75,75);
+ellipse(x - 185,y + 15,75,75);
+System.out.println(mouseX + " " + mouseY);
     }
 
     static public void main(String[] args) {
