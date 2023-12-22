@@ -2,6 +2,8 @@ package _03_char._3_pi_aloud;
 
 import java.util.Scanner;
 
+import game_tools.Sound;
+
 public class PiAloud {
     /***********  SOUND ***************
      * Some computers are unable to play sounds.
